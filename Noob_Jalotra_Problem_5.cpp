@@ -14,7 +14,6 @@ void dfs(int node, int parent, ll path_len_till_now){
     
     for(pair<int, int>neighbour : tree[node]){
         if(neighbour.first == parent)continue;
-        debug() << imie(neighbour) imie(neighbour.second);
         dfs(neighbour.first, node, path_len_till_now + 1ll * neighbour.second);
     }
 }
@@ -129,7 +128,6 @@ void test_case(){
          cin >> u >> v;
          u--, v--;
          int lca = here.lca(u, v);
-         debug() << imie(lca);
          
          ll ans = path_lengths[u] + path_lengths[v] - 2 * path_lengths[lca];
          cout << ans << '\n';
